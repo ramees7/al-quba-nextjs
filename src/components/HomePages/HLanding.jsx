@@ -104,7 +104,7 @@ export default function BackgroundImageCarousel() {
   };
 
   return (
-    <div className="relative w-screen h-screen text-white overflow-hidden min-h-[600px]">
+    <div className="relative w-full h-screen text-white overflow-hidden min-h-[600px]">
       {/* Background Image */}
       <div className="absolute w-full h-full">
         {carouselData.map((slide, index) => (
@@ -148,7 +148,7 @@ export default function BackgroundImageCarousel() {
           <div>
             <Image
               src={sectorCarouselData[currentIndexSector].image}
-              alt=""
+              alt={sectorCarouselData[currentIndexSector].title}
               width={140}
               height={110}
               className="md:w-[140px] w-[100px] md:h-[110px] h-[80px]"

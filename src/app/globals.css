@@ -5,43 +5,81 @@
 
 /* Custom font-face definitions */
 @font-face {
-    font-family: "Inter-ExtraLight-font";
-    src: url("/Fonts/Inter-ExtraLight.ttf") format("truetype");
-    font-weight: 200;
-    font-style: normal;
+  font-family: "Inter-ExtraLight-font";
+  src: url("/Fonts/Inter-ExtraLight.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Inter-Medium-font";
-    src: url("/Fonts/Inter-Medium.ttf") format("truetype");
-    font-weight: 500;
-    font-style: normal;
+  font-family: "Inter-Medium-font";
+  src: url("/Fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "Inter-font";
-    src: url("/Fonts/Inter.ttc") format("truetype");
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Inter-font";
+  src: url("/Fonts/Inter.ttc") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "ppneuemontreal-book-font";
-    src: url("/Fonts/ppneuemontreal-book.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "ppneuemontreal-book-font";
+  src: url("/Fonts/ppneuemontreal-book.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "ppneuemontreal-medium-font";
-    src: url("/Fonts/ppneuemontreal-medium.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "ppneuemontreal-medium-font";
+  src: url("/Fonts/ppneuemontreal-medium.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: "ppneuemontreal-thin-font";
-    src: url("/Fonts/ppneuemontreal-thin.otf") format("opentype");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "ppneuemontreal-thin-font";
+  src: url("/Fonts/ppneuemontreal-thin.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+input:-webkit-autofill {
+  background-color: inherit !important; /* Inherit from parent background */
+  color: inherit !important; /* Inherit text color from parent */
+  box-shadow: 0 0 0px 1000px inherit inset !important; /* Match parent background */
+  transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+}
+/* Keyframe animation for continuous scrolling */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Apply the animation to the marquee text */
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 100px; /* Optional: Creates a small space between texts */
+}
+
+/* Marquee container to hold the text and create continuous scroll */
+.marquee-container {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  display: none;
 }
