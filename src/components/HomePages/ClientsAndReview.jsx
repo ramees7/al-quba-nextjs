@@ -189,10 +189,11 @@ export default function ClientsAndReview() {
                       <Image
                         src={client.image}
                         alt={`${client.name}'s testimonial`}
-                        className="w-full lg:h-[450px] md:h-[400px] h-[380px]"
+                        className="w-full lg:h-[450px] md:h-[400px] h-[380px] object-cover"
                         loading="lazy"
                         width={600}
                         height={600}
+                       
                         onMouseEnter={() => {
                           setHoveredIndex(index);
                           setIsPaused(true);

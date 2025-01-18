@@ -129,7 +129,7 @@ export default function NewsAndStories() {
                       src={item.image}
                       alt="News and Story"
                       loading="lazy"
-                      className="w-full h-[250px]"
+                      className="w-full h-[250px] object-cover"
                       width={500} // Set a fixed width
                       height={250} // Set a fixed height
                     />

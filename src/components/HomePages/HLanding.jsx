@@ -151,7 +151,7 @@ export default function BackgroundImageCarousel() {
               alt={sectorCarouselData[currentIndexSector].title}
               width={140}
               height={110}
-              className="md:w-[140px] w-[100px] md:h-[110px] h-[80px]"
+              className="md:w-[140px] w-[100px] md:h-[110px] h-[80px] object-cover"
             />
           </div>
           <div

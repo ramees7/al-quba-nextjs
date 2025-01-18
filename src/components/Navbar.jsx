@@ -209,6 +209,7 @@ export default function Navbar() {
             alt="Company Logo"
             layout="intrinsic"
             width={128}
+            className="object-cover"
             height={128}
             priority
           />

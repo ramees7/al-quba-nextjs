@@ -1,5 +1,3 @@
-
-import { useState } from "react";
 import dynamic from "next/dynamic"; // For dynamic imports
 import { FaEnvelope, FaRegUser } from "react-icons/fa";
 import { useFormik } from "formik";
@@ -12,8 +10,6 @@ import "react-phone-input-2/lib/bootstrap.css";
 import Select from "react-select";
 
 export default function ScheduleMeeting() {
-  const [phone, setPhone] = useState("");
-
   // Custom styles for the dropdown
   const customStyles = {
     control: (provided, state) => ({
@@ -81,36 +77,34 @@ export default function ScheduleMeeting() {
     { value: "six_months", label: "In 6 Months" },
   ];
 
-  // Formik setup
   const formik = useFormik({
     initialValues: {
       name: "",
       email: "",
-      budget: null,
+      budget: null, // Use null for select fields
       assistance: null,
       investmentPlan: null,
+      phone: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Name is required"),
       email: Yup.string()
         .email("Invalid email address")
         .required("Email is required"),
-      budget: Yup.object().nullable().required("Budget is required"),
+      budget: Yup.object().nullable().required("Budget is required"), // Allow null for select
       assistance: Yup.object().nullable().required("Assistance is required"),
       investmentPlan: Yup.object()
         .nullable()
         .required("Investment Plan is required"),
+      phone: Yup.string()
+        .matches(/^[0-9]{10,}$/, "Phone number must contain at least 10 digits")
+        .required("Phone number is required"),
     }),
     onSubmit: async (values) => {
-      console.log(values, phone);
+      console.log(values);
 
       try {
-        const response = await axios.post("/api/schedule-meeting", {
-          ...values,
-          phone,
-        });
-        console.log(response);
-
+        const response = await axios.post("/api/schedule-meeting", values);
         alert("Meeting scheduled successfully!");
       } catch (error) {
         console.error(error);
@@ -172,7 +166,7 @@ export default function ScheduleMeeting() {
             )}
 
             {/* Phone Number Field */}
-            <PhoneInput
+            {/* <PhoneInput
               country={"ae"}
               enableSearch={true}
               value={phone}
@@ -181,7 +175,22 @@ export default function ScheduleMeeting() {
               buttonClass="!bg-transparent !border-none !h-[50px] !bg-[#EFF0F2]"
               containerClass="w-full flex justify-end"
               dropdownClass="custom-dropdown right-0"
+            /> */}
+
+            <PhoneInput
+              country={"ae"}
+              enableSearch={true}
+              value={formik.values.phone}
+              onChange={(value) => formik.setFieldValue("phone", value)}
+              onBlur={() => formik.setFieldTouched("phone", true)}
+              inputClass="!outline-none !w-full !text-[#898989] !h-[50px] !bg-[#EFF0F2] !border-none !rounded-none !px-4"
+              buttonClass="!bg-transparent !border-none !h-[50px] !bg-[#EFF0F2]"
+              containerClass="w-full flex justify-end"
+              dropdownClass="custom-dropdown right-0"
             />
+            {formik.touched.phone && formik.errors.phone && (
+              <p className="text-red-500 text-sm">{formik.errors.phone}</p>
+            )}
 
             {/* Email Field */}
             <div className="flex items-center w-full px-4 h-[50px] bg-[#EFF0F2] ">
@@ -231,6 +240,87 @@ export default function ScheduleMeeting() {
                 )}
               </div>
             ))}
+
+            {/* Budget Select */}
+            {/* <div className="w-full mb-4">
+              <select
+                name="budget"
+                value={formik.values.budget?.value || ""}
+                onChange={(e) =>
+                  formik.setFieldValue("budget", {
+                    value: e.target.value,
+                    label: e.target.options[e.target.selectedIndex].text,
+                  })
+                }
+                onBlur={formik.handleBlur}
+                className="w-full px-3 h-[50px] bg-[#EFF0F2]  text-[#898989] border-none rounded-none focus:ring-0"
+              >
+                <option value="">Select Budget</option>
+                {budgetOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              {formik.touched.budget && formik.errors.budget && (
+                <p className="text-red-500 text-sm">{formik.errors.budget}</p>
+              )}
+            </div>
+
+            <div className="w-full mb-4">
+              <select
+                name="assistance"
+                value={formik.values.assistance?.value || ""}
+                onChange={(e) =>
+                  formik.setFieldValue("assistance", {
+                    value: e.target.value,
+                    label: e.target.options[e.target.selectedIndex].text,
+                  })
+                }
+                onBlur={formik.handleBlur}
+                className="w-full px-3 h-[50px] bg-[#EFF0F2] text-[#898989] border-none rounded-none focus:ring-0"
+              >
+                <option value="">Select Assistance</option>
+                {assistanceOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              {formik.touched.assistance && formik.errors.assistance && (
+                <p className="text-red-500 text-sm">
+                  {formik.errors.assistance}
+                </p>
+              )}
+            </div>
+
+            <div className="w-full mb-4">
+              <select
+                name="investmentPlan"
+                value={formik.values.investmentPlan?.value || ""}
+                onChange={(e) =>
+                  formik.setFieldValue("investmentPlan", {
+                    value: e.target.value,
+                    label: e.target.options[e.target.selectedIndex].text,
+                  })
+                }
+                onBlur={formik.handleBlur}
+                className="w-full px-3 h-[50px] bg-[#EFF0F2] text-[#898989] border-none rounded-none focus:ring-0"
+              >
+                <option value="">Select Investment Plan</option>
+                {investmentPlanOptions.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              {formik.touched.investmentPlan &&
+                formik.errors.investmentPlan && (
+                  <p className="text-red-500 text-sm">
+                    {formik.errors.investmentPlan}
+                  </p>
+                )}
+            </div> */}
 
             {/* Submit Button */}
             <button

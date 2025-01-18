@@ -21,7 +21,7 @@ export default function DirectorMessage() {
             src={khasimEnoli}
             alt="Profile picture of Mr. Khasim Enoli, Founder & Managing Director"
             loading="lazy"
-            className="md:h-fit h-[450px] relative xl:-top-44 xl:-mb-44 lg:-top-40 lg:-mb-40 -top-20 -mb-20 xl:w-[610px] lg:w-[500px] md:w-[400px] w-full"
+            className="md:h-fit h-[450px] relative xl:-top-44 xl:-mb-44 lg:-top-40 lg:-mb-40 -top-20 -mb-20 xl:w-[610px] lg:w-[500px] md:w-[400px] w-full object-cover"
             width={610} // Add width and height for Next.js Image optimization
             height={450}
           />

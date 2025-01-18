@@ -170,7 +170,7 @@ export default function InvestmenrScheme() {
                         <img
                           src={content.image}
                           alt={content.subHeading}
-                          className="lg:h-[250px] h-[200px]"
+                          className="lg:h-[250px] h-[200px] object-cover"
                           loading="lazy"
                         />
                       </div>
