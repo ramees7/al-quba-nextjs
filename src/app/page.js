@@ -67,13 +67,13 @@ import { useRouter } from "next/navigation";
 import Head from "next/head";
 import logo from "../../public/assets/logo.png";
 import HLanding from "@/components/HomePages/HLanding";
-import InvestmenrScheme from "@/components/HomePages/InvestmenrScheme";
 import ScheduleMeeting from "@/components/HomePages/ScheduleMeeting";
 import GrowAndCarousel from "@/components/HomePages/GrowAndCarousel";
 import ClientsAndReview from "@/components/HomePages/ClientsAndReview";
 import DirectorMessage from "@/components/HomePages/DirectorMessage";
 import NewsAndStories from "@/components/HomePages/NewsAndStories";
 import LayoutRoutes from "@/app/LayoutRoutes";
+import InvestmentScheme from "@/components/HomePages/InvestmentScheme";
 
 // Importing LayoutRoutes
 
@@ -112,7 +112,7 @@ export default function Home() {
         <HLanding />
         <ScheduleMeeting />
         <GrowAndCarousel />
-        <InvestmenrScheme />
+        <InvestmentScheme />
         <ClientsAndReview />
         <DirectorMessage />
         <NewsAndStories />

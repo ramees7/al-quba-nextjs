@@ -118,9 +118,8 @@ export default function BackgroundImageCarousel() {
           >
             <Image
               src={slide.image}
+              fill
               alt={`Slide ${slide.id}`}
-              layout="fill"
-              objectFit="cover"
             />
           </div>
         ))}

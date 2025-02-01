@@ -210,7 +210,7 @@ export default function ScheduleMeeting() {
             )}
 
             {/* Dropdown Fields */}
-            {[
+            {/* {[
               { name: "budget", options: budgetOptions, placeholder: "Budget" },
               {
                 name: "assistance",
@@ -239,7 +239,7 @@ export default function ScheduleMeeting() {
                   <p className="text-red-500 text-sm">{formik.errors[name]}</p>
                 )}
               </div>
-            ))}
+            ))} */}
 
             {/* Budget Select */}
             {/* <div className="w-full mb-4">

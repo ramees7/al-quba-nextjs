@@ -207,7 +207,6 @@ export default function Navbar() {
           <Image
             src={logo}
             alt="Company Logo"
-            layout="intrinsic"
             width={128}
             className="object-cover"
             height={128}

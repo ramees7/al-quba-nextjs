@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link"; // Use next/link for routing
 import Flag from "react-world-flags";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   const [fileSize, setFileSize] = useState(null);
@@ -222,18 +223,34 @@ export default function Footer() {
         </nav>
 
         {/* Bottom Section */}
-        <section className="border-t border-[#707070] mt-5 pt-5 grid grid-cols-10 gap-y-4 justify-between items-start lg:text-base sm:text-sm xs:text-xs  text-[#D5D5D5] font-extralightFont">
-          <div className="md:col-span-6 col-span-7 border-r pe-2">
-            ©Copyright 2025 AL QUBA Investment Company. All Rights Reserved
+        <section className="border-t border-[#707070] mt-5 pt-5 md:flex gap-y-4 justify-between items-start lg:text-base sm:text-sm xs:text-xs  text-[#D5D5D5] font-extralightFont">
+          <div className="flex items-center md:flex-nowrap flex-wrap">
+            <div className="md:col-span-6 col-span-7  lg:pe-8 pe-4">
+              ©Copyright 2025 AL QUBA Investment Company. All Rights Reserved
+            </div>
+            <div className="col-span-1  md:text-center text-end lg:px-8 px-4 border-l border-r">
+              <Link href="/terms">Terms of Use</Link>
+            </div>
+            <div className="col-span-1 flex items-center lg:px-8 px-4 justify-center">
+              <a href="" className="rounded-full text-white p-1 text-2xl"  target="_blank">
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.instagram.com/alquba_investment/" target="_blank"
+                className="rounded-full text-[#0E2141] p-1 bg-white"
+              >
+                <FaInstagram />
+              </a>
+              <a
+                href="https://linkedin.com/in/khasim-enoli-43211734"  target="_blank"
+                className="rounded-full text-[#0E2141] p-1 bg-white ms-1"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
           </div>
-          <div className="col-span-3  md:text-center text-end ps-2">
-            <Link href="/terms">Terms of Use</Link>
-          </div>
-          <div className="space-x-8 md:col-span-1 col-span-full text-end lg:text-4xl md:text-3xl sm:text-3xl xs:text-2xl">
-            <Link
-              href="/career"
-              className="text-white underline decoration-[#EFEFEF] decoration-[1px] underline-offset-[10px]"
-            >
+          <div className="space-x-8  text-end lg:text-4xl md:text-3xl sm:text-3xl xs:text-2xl md:mt-0 mt-5">
+            <Link href="/career" className="text-white ">
               Career
             </Link>
           </div>

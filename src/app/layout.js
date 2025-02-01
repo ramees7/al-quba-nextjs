@@ -16,7 +16,7 @@ export const metadata = {
   title: "Al-Quba Investment",
   description: "Empowering financial growth and security through trusted investment solutions.",
   icons: {
-    icon: "/assets/logo-only.png", // Path to your favicon
+    icon: "/assets/logo.png", // Path to your favicon
   },
 };
 

@@ -38,6 +38,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.webnode.com", // Add this line
       },
+      {
+        protocol: "https",
+        hostname: "navi.com", // Add this line
+      },
+      {
+        protocol: "https",
+        hostname: "media.licdn.com", // Add this line
+      },
     ],
   },
   webpack(config, { isServer }) {
