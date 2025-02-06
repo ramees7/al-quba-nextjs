@@ -356,10 +356,10 @@ export default function ClientsAndReview() {
 
   return (
     <>
-      <div className="md:h-screen md:min-h-[700px] min-h-fit tall:h-[700px] lg:py-20 md:py-14 py-10 lg:px-20 md:px-10 px-8 flex items-center bg-[#F7F7F7]">
+      <div className="md:h-screen md:min-h-[700px] min-h-fit tall:h-[600px] lg:py-20 md:py-14 py-10 lg:px-20 md:px-10 px-8 flex items-center bg-[#F7F7F7]">
         <div>
-          <div className="flex justify-between items-center w-full xs:gap-1 sm:gap-3">
-            <h1 className="font-capsNormal lg:text-4xl md:text-3xl sm:text-xl xs:text-lg">
+          <div className="flex justify-between items-center w-full gap-1">
+            <h1 className="font-ppneuemontrealThin lg:text-4xl md:text-3xl sm:text-xl xs:text-lg">
               OUR HAPPY CLIENTS SAY
             </h1>
             <Link href="/">
@@ -402,7 +402,7 @@ export default function ClientsAndReview() {
                       <Image
                         src={client.image}
                         alt={`${client.name}'s testimonial`}
-                        className="w-full lg:h-[400px] h-[300px] object-cover"
+                        className="w-full lg:h-[400px] md:h-[300px] h-[250px] object-cover"
                         width={300}
                         height={400}
                         loading="lazy"

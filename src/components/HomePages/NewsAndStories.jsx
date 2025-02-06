@@ -282,10 +282,10 @@ export default function NewsAndStories() {
   );
 
   return (
-    <div className="lg:py-20 md:py-14 py-10 lg:px-20 md:px-10 px-8 md:h-screen md:min-h-[700px] min-h-fit tall:h-[700px] flex items-center">
+    <div className="lg:py-20 md:py-14 py-10 lg:px-20 md:px-10 px-8 md:h-screen md:min-h-[700px] min-h-fit tall:h-[600px] flex items-center">
       <div>
         <div className="md:flex justify-between items-center w-full xs:gap-1 sm:gap-3 pb-10">
-          <h1 className="uppercase lg:text-5xl md:text-4xl sm:text-3xl xs:text-lg font-capsNormal">
+          <h1 className="uppercase lg:text-5xl md:text-4xl sm:text-3xl xs:text-lg font-ppneuemontrealThin">
             LATEST NEWS & STORIES
           </h1>
           <div className="flex justify-between gap-3 items-center md:mt-0 mt-5">
@@ -309,11 +309,10 @@ export default function NewsAndStories() {
             <div className="space-y-4" key={index}>
               <Image
                 src={item.image}
-                alt=""
+                alt={item.heading}
                 width={300} // Adjust based on your image dimensions
-                height={250} // Adjust based on your image dimensions
-                className="w-full h-[250px] object-cover"
-                loading="lazy"
+                height={200} // Adjust based on your image dimensions
+                className="w-full md:h-[250px] h-[150px] object-cover"
               />
               <h1 className="sm:text-sm xs:text-xs md:text-base font-mediumFont xl:pe-5">
                 {item.heading}

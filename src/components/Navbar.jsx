@@ -209,7 +209,7 @@ export default function Navbar() {
             alt="Company Logo"
             width={128}
             className="object-cover"
-            height={128}
+            height={128}  
             priority
           />
         </div>

@@ -111,6 +111,7 @@ export default function Footer() {
                 src="/assets/logo.png" // Use next/image for optimized image
                 alt="Company Logo"
                 width={55}
+                style={{ width: "auto", height: "auto" }}
                 height={55}
                 className="object-contain"
               />
@@ -232,17 +233,23 @@ export default function Footer() {
               <Link href="/terms">Terms of Use</Link>
             </div>
             <div className="col-span-1 flex items-center lg:px-8 px-4 justify-center">
-              <a href="" className="rounded-full text-white p-1 text-2xl"  target="_blank">
+              <a
+                href=""
+                className="rounded-full text-white p-1 md:text-2xl sm:text-2xl xs:text-xl"
+                target="_blank"
+              >
                 <FaFacebook />
               </a>
               <a
-                href="https://www.instagram.com/alquba_investment/" target="_blank"
+                href="https://www.instagram.com/alquba_investment/"
                 className="rounded-full text-[#0E2141] p-1 bg-white"
+                target="_blank"
               >
                 <FaInstagram />
               </a>
               <a
-                href="https://linkedin.com/in/khasim-enoli-43211734"  target="_blank"
+                href="https://linkedin.com/in/khasim-enoli-43211734"
+                target="_blank"
                 className="rounded-full text-[#0E2141] p-1 bg-white ms-1"
               >
                 <FaLinkedinIn />

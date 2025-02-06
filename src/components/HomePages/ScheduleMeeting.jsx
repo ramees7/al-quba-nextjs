@@ -1,3 +1,4 @@
+"use client"
 import dynamic from "next/dynamic"; // For dynamic imports
 import { FaEnvelope, FaRegUser } from "react-icons/fa";
 import { useFormik } from "formik";
@@ -210,7 +211,7 @@ export default function ScheduleMeeting() {
             )}
 
             {/* Dropdown Fields */}
-            {/* {[
+            {[
               { name: "budget", options: budgetOptions, placeholder: "Budget" },
               {
                 name: "assistance",
@@ -226,6 +227,7 @@ export default function ScheduleMeeting() {
               <div className="w-full" key={name}>
                 <Select
                   name={name}
+                  instanceId={`${name}-select`}
                   options={options}
                   placeholder={placeholder}
                   styles={customStyles}
@@ -239,10 +241,23 @@ export default function ScheduleMeeting() {
                   <p className="text-red-500 text-sm">{formik.errors[name]}</p>
                 )}
               </div>
-            ))} */}
+            ))}
 
-            {/* Budget Select */}
-            {/* <div className="w-full mb-4">
+            
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full h-[50px] text-white bg-[#0E2141] font-medium uppercase"
+            >
+              INVEST TODAY
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}
+{/* <div className="w-full mb-4">
               <select
                 name="budget"
                 value={formik.values.budget?.value || ""}
@@ -321,17 +336,3 @@ export default function ScheduleMeeting() {
                   </p>
                 )}
             </div> */}
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full h-[50px] text-white bg-[#0E2141] font-medium uppercase"
-            >
-              INVEST TODAY
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-}

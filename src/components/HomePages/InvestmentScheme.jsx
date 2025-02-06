@@ -321,13 +321,13 @@ export default function InvestmentScheme() {
       {/* Investment Sectors Section */}
       <div className="bg-[#F7F7F7] lg:px-20 md:px-10 px-8 lg:py-20 md:py-14 py-10 md:h-screen md:min-h-[800px] min-h-fit md:tall:h-[800px] flex items-center">
         <div>
-          <div className="flex justify-between items-center mb-10">
-            <h1 className="font-ppneuemontrealThin uppercase lg:text-5xl md:text-4xl sm:text-2xl xs:text-xl">
+          <div className="flex justify-between items-center w-full gap-1 mb-10">
+            <h1 className="font-ppneuemontrealThin lg:text-4xl md:text-3xl sm:text-xl xs:text-lg uppercase">
               Investment Sectors
             </h1>
             <Link href="/">
-              <button className="border border-[#0F2041] font-medium uppercase text-sm px-6 py-2 rounded-3xl">
-                Know More
+              <button className="border font-capsMedium border-[#0F2041] md:text-base sm:text-sm xs:text-xs rounded-3xl uppercase md:px-7 sm:px-4 xs:px-2 py-1">
+                know more
               </button>
             </Link>
           </div>
@@ -335,7 +335,7 @@ export default function InvestmentScheme() {
             {investmentSectors.map((sector, index) => (
               <div
                 key={index}
-                className="bg-white border border-[#707070] xl:p-8 p-5 text-center flex items-center"
+                className="bg-white hover:scale-105 hover:shadow-2xl xl:p-8 md:p-5 p-2 text-center  flex items-center"
               >
                 <div>
                   <div className="flex justify-center mb-4">
@@ -343,7 +343,7 @@ export default function InvestmentScheme() {
                       src="/assets/invest-icon.png" // Place the image in the public/assets folder
                       alt="sector icon"
                       width={80}
-                      height={80}
+                      height={80} 
                       className="h-20 w-20"
                     />
                   </div>
@@ -363,23 +363,24 @@ export default function InvestmentScheme() {
 
       {/* Investment Benefits Section */}
       <div className="relative w-full h-full lg:py-20 md:py-14 py-10 lg:px-20 md:px-10 px-8">
-        <div className="flex justify-between items-center mb-10 w-full">
-          <h1 className="font-ppneuemontrealThin uppercase lg:text-5xl md:text-4xl sm:text-2xl xs:text-xl">
+        <div className="flex justify-between items-center w-full gap-1 mb-10">
+          <h1 className="font-ppneuemontrealThin lg:text-4xl md:text-3xl sm:text-xl xs:text-lg">
             INVESTMENT BENEFITS
           </h1>
           <Link href="/">
-            <button className="border border-[#0F2041] font-medium uppercase text-sm px-6 py-2 rounded-3xl">
-              Know More
+            <button className="border font-capsMedium border-[#0F2041] md:text-base sm:text-sm xs:text-xs rounded-3xl uppercase md:px-7 sm:px-4 xs:px-2 py-1">
+              know more
             </button>
           </Link>
         </div>
+
         <div className="grid md:grid-cols-2 lg:gap-10 gap-5">
           <div className="flex flex-col justify-between gap-20">
             <div className="bg-[#D4BD9B] h-[400px] flex items-center justify-center rounded-[40px]">
               <Image
-                src="/assets/invest-2.png" // Place the image in the public/assets folder
+                src="/assets/invest-2.png" 
                 alt="investment icon"
-                width={100}
+                width={100} style={{width:"auto" , height:"auto"}}
                 height={100}
                 className="h-[100px] w-[100px]"
               />

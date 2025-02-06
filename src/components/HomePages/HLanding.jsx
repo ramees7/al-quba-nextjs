@@ -118,7 +118,7 @@ export default function BackgroundImageCarousel() {
           >
             <Image
               src={slide.image}
-              fill
+              fill 
               alt={`Slide ${slide.id}`}
             />
           </div>
@@ -149,7 +149,7 @@ export default function BackgroundImageCarousel() {
               src={sectorCarouselData[currentIndexSector].image}
               alt={sectorCarouselData[currentIndexSector].title}
               width={140}
-              height={110}
+              height={110} 
               className="md:w-[140px] w-[100px] md:h-[110px] h-[80px] object-cover"
             />
           </div>
